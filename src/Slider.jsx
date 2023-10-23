@@ -11,9 +11,11 @@ const [open, setOpen] = React.useState(true);
 
 return (
 <>
-    <button type="button" onClick={() => setOpen(true)}>
-    Open Lightbox
-    </button>
+    <div className="w-3/4 h-auto mx-auto flex">
+        <button className='px-2 rounded-xl bg-green-500 w-auto h-8 m-auto hover:bg-emerald-300' type="button" onClick={() => setOpen(true)}>
+            Open Lightbox
+        </button>
+    </div>
 
     <Lightbox
     plugins={[Captions, Slideshow]}
