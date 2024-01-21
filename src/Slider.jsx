@@ -23,19 +23,19 @@ return (
     close={() => setOpen(false)}
     slides={[
         { 
-            src: "https://source.unsplash.com/ts1zXzsD7xc/1080x1620",
-            title: "Slide title",
-            description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." 
+            src: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            title: "Chị Nguyễn Thị Mỹ Linh",
+            description: "Nhà sáng lập cửa hàng ABC." 
         },
         { 
-            title: "Slide title",
-            description: "Slide description",
-            src: "https://source.unsplash.com/F_r83HEzsXI/1080x1426" 
+            title: "Ông Trần Văn Nam",
+            description: "Đồng sáng lập, tổng giám đốc công ty ABC",
+            src: "https://images.unsplash.com/photo-1504593811423-6dd665756598?q=80&w=3570&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
         },
         { 
-            title: "Slide title",
-            description: "Slide description",
-            src: "https://source.unsplash.com/m82uh_vamhg/1080x1440" },
+            title: "Anh Nguyễn Thị Trân",
+            description: "Khách hàng thân thiết tại cửa hàng ABC",
+            src: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
     ]}
     captions={{ showToggle: true, descriptionTextAlign: "center", descriptionMaxLines: 5 }}
     slideshow={{ autoplay: true, delay: 2000 }}

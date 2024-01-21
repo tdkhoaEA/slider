@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.yarl__slide_image {
+    // margin-left: 30%;
+}
+
+.yarl__container {
+    // background-color: #494545;
+    background-color: white;
+    // background: url("src/assets/background.jpg") no-repeat center center fixed;
+    // z-index: 0;
+    .yarl__slide_title {
+        font-size: 24px;
+    }
+}
+
+.yarl__carousel_with_slides {
+    background-color: transparent;
+}
+
+.yarl__slide {
+    background-color: transparent;
+}
+
+.yarl__slide_captions_container {
+    // width: 400px;
+    height: 200px;
+    border: 1px solid white;
+    background-color: rgb(0, 0, 0, 0.8);
+
+    .yarl__slide_description {
+        width: 100%;
+        font-size: 24px;
+        font-weight: 800;
+        margin: auto;
+    }
+}
+
+.yarl__slide_captions_container.yarl__slide_title_container{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
