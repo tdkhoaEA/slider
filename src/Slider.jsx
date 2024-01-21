@@ -1,13 +1,19 @@
-import * as React from "react";
+import React, { useRef, useEffect } from 'react';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/plugins/captions.css";
 import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 // import Inline from "yet-another-react-lightbox/plugins/inline";
+import YouTube from 'react-youtube';
 
 export default function Slider() {
 const [open, setOpen] = React.useState(true);
+const videoRef = useRef();
+
+useEffect(()=>{
+    videoRef.current.internalPlayer.playVideo();
+}, [])
 
 return (
 <>
@@ -15,6 +21,7 @@ return (
         <button className='px-2 rounded-xl bg-green-500 w-auto h-8 m-auto hover:bg-emerald-300' type="button" onClick={() => setOpen(true)}>
             Open Lightbox
         </button>
+        <YouTube videoId="0JSIMyRozEY" ref={videoRef} />
     </div>
 
     <Lightbox
