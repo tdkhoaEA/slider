@@ -8,12 +8,15 @@
 }
 
 .yarl__container {
-    // background-color: #494545;
-    background-color: white;
+    background-color: rgb(33, 33, 33);
+    // background-color: white;
     // background: url("src/assets/background.jpg") no-repeat center center fixed;
     // z-index: 0;
     .yarl__slide_title {
-        font-size: 24px;
+        font-size: 32px;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        margin-top: 18px;
     }
 }
 
@@ -28,14 +31,22 @@
 .yarl__slide_captions_container {
     // width: 400px;
     height: 200px;
-    border: 1px solid white;
-    background-color: rgb(0, 0, 0, 0.8);
+    background-color: rgb(33, 33, 33, 0.9);
 
     .yarl__slide_description {
         width: 100%;
-        font-size: 24px;
-        font-weight: 800;
-        margin: auto;
+        margin: 16px auto;
+
+        .title {
+            font-size: 40px;
+            font-weight: 600;
+        }
+
+        .sub-title {
+            font-size: 28px;
+            margin-top: 12px;
+            font-style: italic;
+        }
     }
 }
 

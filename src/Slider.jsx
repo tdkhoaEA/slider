@@ -43,17 +43,18 @@ return (
     slides={[
         { 
             src: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            title: "Chị Nguyễn Thị Mỹ Linh",
-            description: "Nhà sáng lập cửa hàng ABC." 
+            title: "",
+            description:
+                <div><p className="title">Chị Nguyễn Thị Hà</p> <p className="sub-title">Tổng giám đốc công ty ABC</p></div> 
         },
         { 
-            title: "Ông Trần Văn Nam",
-            description: "Đồng sáng lập, tổng giám đốc công ty ABC",
+            title: "",
+            description: <div><p className="title">Ông Trần Văn Nam</p> <p className="sub-title">Đồng sáng lập, tổng giám đốc công ty ABC</p></div>,
             src: "https://images.unsplash.com/photo-1504593811423-6dd665756598?q=80&w=3570&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
         },
         { 
-            title: "Anh Nguyễn Thị Trân",
-            description: "Khách hàng thân thiết tại cửa hàng ABC",
+            title: "",
+            description: <div><p className="title">Ông Trần Văn Nam</p> <p className="sub-title">Đồng sáng lập, tổng giám đốc công ty ABC</p></div>,
             src: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
     ]}
     captions={{ showToggle: true, descriptionTextAlign: "center", descriptionMaxLines: 5 }}
