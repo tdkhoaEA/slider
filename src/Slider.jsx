@@ -6,7 +6,7 @@ import "yet-another-react-lightbox/plugins/captions.css";
 import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 // import Inline from "yet-another-react-lightbox/plugins/inline";
 import YouTube from "react-youtube";
-// import Img1 from "./assets/img1.png";
+import Img1 from "/assets/img1.png";
 
 export default function Slider() {
     const [open, setOpen] = useState(true);
