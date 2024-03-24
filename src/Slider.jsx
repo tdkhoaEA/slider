@@ -6,6 +6,7 @@ import "yet-another-react-lightbox/plugins/captions.css";
 import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 // import Inline from "yet-another-react-lightbox/plugins/inline";
 import YouTube from "react-youtube";
+// import Img1 from "./assets/img1.png";
 
 export default function Slider() {
     const [open, setOpen] = useState(true);
@@ -46,7 +47,7 @@ export default function Slider() {
                 close={() => setOpen(false)}
                 slides={[
                     {
-                        src: "src/assets/img1.png",
+                        src: "/assets/img1.png",
                         title: "",
                         description: (
                             <div>
@@ -67,7 +68,7 @@ export default function Slider() {
                                 </p>
                             </div>
                         ),
-                        src: "src/assets/img2.png",
+                        src: "/assets/img2.png",
                     },
                     {
                         title: "",
@@ -79,7 +80,7 @@ export default function Slider() {
                                 </p>
                             </div>
                         ),
-                        src: "src/assets/img3.png",
+                        src: "/assets/img3.png",
                     },
                 ]}
                 captions={{
