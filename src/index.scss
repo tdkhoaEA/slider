@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .yarl__slide_image {
     // margin-left: 30%;
 }
@@ -50,7 +49,7 @@
     }
 }
 
-.yarl__slide_captions_container.yarl__slide_title_container{
+.yarl__slide_captions_container.yarl__slide_title_container {
     height: 100px;
     display: flex;
     justify-content: center;
