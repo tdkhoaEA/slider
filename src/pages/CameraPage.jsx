@@ -1,6 +1,8 @@
 import { useRef, useState, useCallback } from 'react';
 import Webcam from 'react-webcam';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
 const videoConstraints = {
     width: 1280,
@@ -9,10 +11,12 @@ const videoConstraints = {
 };
 
 function CameraPage() {
+    const navigate = useNavigate();
     const webcamRef = useRef(null);
     const fileInputRef = useRef(null);
     const [capturedImage, setCapturedImage] = useState(null);
     const [uploading, setUploading] = useState(false);
+    const [uploadSuccess, setUploadSuccess] = useState(false);
 
     const capture = useCallback(() => {
         const imageSrc = webcamRef.current.getScreenshot();
@@ -39,7 +43,7 @@ function CameraPage() {
         try {
             const filename = 'khoa'
             // Fetch the presigned URL
-            const response = await axios.get(`http://localhost:8000/api/generate-presigned-url/?filename=${encodeURIComponent(filename)}`);
+            const response = await axios.get(`${apiBaseUrl}/api/generate-presigned-url/?filename=${encodeURIComponent(filename)}`);
             const { uploadUrl } = response.data;
     
             console.log('Received presigned URL:', uploadUrl);
@@ -64,9 +68,6 @@ function CameraPage() {
                 },
             });
     
-            console.log('Upload response status:', uploadResponse.status);
-            console.log('Upload response headers:', Object.fromEntries(uploadResponse.headers));
-    
             if (!uploadResponse.ok) {
                 const errorText = await uploadResponse.text();
                 console.error('Error response body:', errorText);
@@ -75,7 +76,8 @@ function CameraPage() {
     
             const responseText = await uploadResponse.text();
             console.log('Successful response body:', responseText);
-    
+            setUploadSuccess(true);
+
             alert('Image uploaded successfully!');
         } catch (error) {
             console.error('Full error:', error);
@@ -138,6 +140,16 @@ function CameraPage() {
                         >
                             {uploading ? 'Uploading...' : 'Upload'}
                         </button>
+                        {
+                            uploadSuccess && (
+                                <button 
+                                    onClick={() => navigate('/slider')}
+                                    className="view-button bg-orange-400 text-white  py-2 px-4 rounded"
+                                >
+                                    View
+                                </button>
+                            )
+                        }
                     </div>
                 </>
             )}

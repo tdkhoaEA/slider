@@ -8,7 +8,7 @@ function App() {
     <Router>
     <Routes>
       <Route exact path="/" element={<CameraPage  />} />
-      <Route path="/upload" element={<Slider/>} />
+      <Route path="/slider" element={<Slider/>} />
       <Route path="*" element={<NotFound />} />
     </Routes>
 </Router>
