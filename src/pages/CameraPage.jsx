@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+console.log({apiBaseUrl})
 
 const videoConstraints = {
     width: 1280,
