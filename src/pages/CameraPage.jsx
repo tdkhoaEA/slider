@@ -108,6 +108,7 @@ function CameraPage() {
     
             console.log("Upload successful. Image ID:", imageId);
             setUploadSuccess(true);
+            setMetadata({});
     
             alert("Image uploaded successfully!");
         } catch (error) {
