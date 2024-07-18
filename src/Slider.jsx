@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Captions from "yet-another-react-lightbox/plugins/captions";
@@ -7,6 +7,8 @@ import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 // import Inline from "yet-another-react-lightbox/plugins/inline";
 import axios from "axios";
 import Youtube from "./components/youtube";
+
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
 
 export default function Slider() {
     const [open, setOpen] = useState(true);
@@ -21,25 +23,36 @@ export default function Slider() {
     const fetchS3Objects = async () => {
         try {
             setLoading(true);
-            const response = await axios.get("http://localhost:8000/api/images/");
+            const response = await axios.get(`${apiBaseUrl}/api/images/`);
             const fetchedObjects = response.data;
 
-            const transformedSlides = fetchedObjects.map(obj => ({
+            const transformedSlides = fetchedObjects.map((obj) => ({
                 src: obj.url, // Assuming the key is the image URL
                 title: "",
                 description: (
                     <div>
-                    <p className="title">{obj.metadata.title || 'Untitled'}</p>
-                    <p className="sub-title">{obj.metadata.subtitle || 'No position specified'}</p>
-                    {obj.metadata.experience && <p className="experience">Kinh nghiệm: {obj.metadata.experience}</p>}
-                    {obj.metadata.achievement && <p className="achievement">Thành tựu: {obj.metadata.achievement}</p>}
-                  </div>
+                        <p className="title">
+                            {obj.metadata.title || "Untitled"}
+                        </p>
+                        <p className="sub-title">
+                            {obj.metadata.subtitle || "No position specified"}
+                        </p>
+                        {obj.metadata.experience && (
+                            <p className="experience">
+                                Kinh nghiệm: {obj.metadata.experience}
+                            </p>
+                        )}
+                        {obj.metadata.achievement && (
+                            <p className="achievement">
+                                Thành tựu: {obj.metadata.achievement}
+                            </p>
+                        )}
+                    </div>
                 ),
                 quote: obj.quote || "",
-              }));
-              
-        
-              setSlides(transformedSlides);
+            }));
+
+            setSlides(transformedSlides);
             setLoading(false);
         } catch (err) {
             setError("An error occurred while fetching S3 objects");
