@@ -7,6 +7,7 @@ import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 // import Inline from "yet-another-react-lightbox/plugins/inline";
 import axios from "axios";
 import Youtube from "./components/youtube";
+import Header from "./components/header";
 
 const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
 
@@ -27,24 +28,30 @@ export default function Slider() {
             const fetchedObjects = response.data;
 
             const transformedSlides = fetchedObjects.map((obj) => ({
-                src: obj.url, // Assuming the key is the image URL
+                src: obj.url,
                 title: "",
                 description: (
-                    <div>
+                    <div className='flex flex-col items-center'>
                         <p className="title">
-                            {obj.metadata.title || "Untitled"}
+                            {obj.metadata.title
+                                ? decodeURIComponent(obj.metadata.title)
+                                : "Untitled"}
                         </p>
                         <p className="sub-title">
-                            {obj.metadata.subtitle || "No position specified"}
+                            {obj.metadata.subtitle
+                                ? decodeURIComponent(obj.metadata.subtitle)
+                                : "No position specified"}
                         </p>
                         {obj.metadata.experience && (
                             <p className="experience">
-                                Kinh nghiệm: {obj.metadata.experience}
+                                Kinh nghiệm:{" "}
+                                {decodeURIComponent(obj.metadata.experience)}
                             </p>
                         )}
                         {obj.metadata.achievement && (
                             <p className="achievement">
-                                Thành tựu: {obj.metadata.achievement}
+                                Thành tựu:{" "}
+                                {decodeURIComponent(obj.metadata.achievement)}
                             </p>
                         )}
                     </div>
@@ -64,7 +71,8 @@ export default function Slider() {
     if (error) return <div>{error}</div>;
 
     return (
-        <>
+        <>  
+            <Header />
             <button
                 className="px-2 rounded-xl bg-green-500 w-auto h-8 m-auto hover:bg-emerald-300"
                 type="button"
