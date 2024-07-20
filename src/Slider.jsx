@@ -31,29 +31,24 @@ export default function Slider() {
                 src: obj.url,
                 title: "",
                 description: (
-                    <div className='flex flex-col items-center'>
+                    <div className="flex flex-col items-center">
                         <p className="title">
                             {obj.metadata.title
                                 ? decodeURIComponent(obj.metadata.title)
                                 : "Untitled"}
                         </p>
                         <p className="sub-title">
-                            {obj.metadata.subtitle
-                                ? decodeURIComponent(obj.metadata.subtitle)
-                                : "No position specified"}
-                        </p>
-                        {obj.metadata.experience && (
+                                {obj.metadata.subtitle
+                                    ? decodeURIComponent(obj.metadata.subtitle)
+                                    : "No position specified"}
+                            </p>
                             <p className="experience">
-                                Kinh nghiệm:{" "}
-                                {decodeURIComponent(obj.metadata.experience)}
+                                {obj.metadata.experience
+                                    ? decodeURIComponent(
+                                        obj.metadata.experience
+                                    )
+                                    : ""}
                             </p>
-                        )}
-                        {obj.metadata.achievement && (
-                            <p className="achievement">
-                                Thành tựu:{" "}
-                                {decodeURIComponent(obj.metadata.achievement)}
-                            </p>
-                        )}
                     </div>
                 ),
                 quote: obj.quote || "",
@@ -71,7 +66,7 @@ export default function Slider() {
     if (error) return <div>{error}</div>;
 
     return (
-        <>  
+        <div className="max-w-screen">
             <Header />
             <button
                 className="px-2 rounded-xl bg-green-500 w-auto h-8 m-auto hover:bg-emerald-300"
@@ -97,6 +92,6 @@ export default function Slider() {
                 //     style: { width: "100%", maxWidth: "100vw", aspectRatio: "3 / 2" },
                 // }}
             />
-        </>
+        </div>
     );
 }

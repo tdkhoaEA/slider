@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 .yarl__slide_image {
-    // margin-left: 30%;
+    max-width: min(1280px, 100%) !important;
+    max-height: 600px !important;
 }
 
 .yarl__container {
@@ -28,8 +29,7 @@
 }
 
 .yarl__slide_captions_container {
-    // width: 400px;
-    height: 260px;
+    height: 200px;
     background-color: rgb(33, 33, 33, 0.9);
 
     .yarl__slide_description {
@@ -43,7 +43,7 @@
 
         .sub-title {
             font-size: 28px;
-            margin-top: 12px;
+            margin-top: 4px;
             font-style: italic;
         }
     }
@@ -53,4 +53,9 @@
     height: 100px;
     display: flex;
     justify-content: center;
+}
+
+img, video {
+    max-width: 100vw;
+    height: 720px;
 }

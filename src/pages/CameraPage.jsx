@@ -10,7 +10,7 @@ console.log({ apiBaseUrl });
 const videoConstraints = {
     width: 1280,
     height: 720,
-    facingMode: "user",
+    facingMode: "user"
 };
 
 const initialMetadata = {
@@ -18,7 +18,6 @@ const initialMetadata = {
     subtitle: "",
     experience: "",
     achievement: "",
-    // Add more fields as needed
 };
 
 function CameraPage() {
